@@ -1,0 +1,179 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #E7F6F2;
+    color: grey;
+    overflow: auto;
+    height: 103px;
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar li {
+    list-style: none;
+    padding: 20px;
+    font-size: 25px;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.navbar ul {
+    float: right;
+    justify-content: center;
+    margin-top: 12px;
+    margin-right: 150px;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.text {
+    display: inline-block;
+    margin: 25px 200px;
+    font-size: 40px;
+    letter-spacing: 9px;
+}
+
+.area {
+    font-family: 'Source Serif 4', serif;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-left: 120px;
+    border-radius: 20px;
+    padding: 7px;
+}
+
+.dd::placeholder {
+    padding: 15px 0 0 700px;
+    font-size: 22px;
+}
+
+.pos::placeholder {
+    padding: 60px 550px 60px 550px;
+    font-size: 50px;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.iio {
+    font-family: 'Source Serif 4', serif;
+    width: 270px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#btnText {
+    font-family: 'Source Serif 4', serif;
+    width: 100px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+    position: relative;
+    cursor: pointer;
+}
+
+.contactaa {
+    color: grey;
+    padding-left: 45%;
+    padding-top: 25px;
+    height: 80px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 7px;
+}
+
+.contactaaa {
+    color: grey;
+    padding-left: 37%;
+    padding-top: 25px;
+    height: 80px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 7px;
+}
+
+.signup-form {
+    font-family: 'Source Serif 4', serif;
+    padding: 125px 400px 200px 650px;
+}
+
+.input {
+    height: 70px;
+    width: 400px;
+    font-size: 20px;
+}
+
+.input::placeholder {
+    font-family: 'Source Serif 4', serif;
+    padding-left: 150px;
+}
+
+.font {
+    font-family: 'Source Serif 4', serif;
+}
+
+.font1 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    font-size: 40px;
+    margin-top: 3rem;
+}
+
+.or {
+    margin: 20px 0 0 20px;
+}
+
+.img {
+    margin: 20px 200px 0 855px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.textt {
+    margin: 40px 300px 0 300px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#checkkk {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.bbody {
+    margin: 0 10rem 0 13rem;
+    text-align: justify;
+    font-size: 22px;
+}

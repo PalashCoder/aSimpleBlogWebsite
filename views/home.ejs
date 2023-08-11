@@ -1,0 +1,13 @@
+<%- include("header") %>
+<div class="bbody font">
+    <h1 class="font1">All About Blog</h1>
+    <%= post1 %>
+    <h1 class="font1">What makes the best blogging platform?</h1>
+    <%= post2 %>
+    <% array.forEach(function(element){ %>
+        <h1 class="font1"><%= element.title; %></h1>
+        <%= element.content; %>  
+    <%}); %>
+</div>
+
+    <%- include("footer") %>
