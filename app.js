@@ -89,7 +89,7 @@ app.post("/compose", (req, res) => {
 });
 app.get("/post/:topic", (req, res) => {
     let condi = _.lowerCase(req.params.topic);
-    array.forEach(element => {
+    array.forEach(function(element) {
         if (condi === _.lowerCase(element.title)) {
             res.render("post.ejs", { title: element.title, content: element.content });
         }
