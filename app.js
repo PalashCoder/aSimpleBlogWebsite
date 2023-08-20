@@ -33,7 +33,20 @@ app.get("/success", (req, res) => {
 app.get("/failure", (req, res) => {
     res.render("failure.ejs");
 });
-
+app.get("/post", (req, res) => {
+    res.render("post.ejs", { title: req.body.title, content: req.body.w3review });
+});
+app.get("/post/:topic", (req, res) => {
+    let condi = _.lowerCase(req.params.topic);
+    array.forEach(function (element) {
+        if (condi === _.lowerCase(element.title)) {
+            res.render("post.ejs", { title: element.title, content: element.content });
+        }
+        else{
+            res.render("post.ejs", { title: element.title, content: element.content });
+        }
+    });
+});
 
 app.post("/contact", (req, res) => {
     var name = req.body.text;
@@ -87,14 +100,7 @@ app.post("/compose", (req, res) => {
     array.push(dataobj);
     res.redirect("/");
 });
-app.get("/post/:topic", (req, res) => {
-    let condi = _.lowerCase(req.params.topic);
-    array.forEach(function(element) {
-        if (condi === _.lowerCase(element.title)) {
-            res.render("post.ejs", { title: element.title, content: element.content });
-        }
-    });
-});
+
 app.listen(port, () => {
     console.log(`Server Online on port ${port}.`);
 });
