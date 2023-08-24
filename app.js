@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import ejs from "ejs";
 import https from "https";
 import _ from "lodash";
+import mongoose from "mongoose";
 
 const app = express();
 const port = 3000;
@@ -15,6 +16,15 @@ const post2 = "Blogs have been around since the earliest days of the internet, s
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+
+mongoose.connect("mongodb://localhost:27017/blogDB", { useNewUrlParser: true });
+
+const postSchema = {
+    title: String,
+    content: String
+};
+
+const Post = mongoose.model("Post", postSchema);
 
 app.get("/", (req, res) => {
     res.render("home.ejs", { post1: post1, post2: post2, array: array });
@@ -39,6 +49,14 @@ app.get("/post", (req, res) => {
 });
 app.get("/post/:topic", (req, res) => {
     let condi = _.lowerCase(req.params.topic);
+
+    Post.findOne({ _id: condi }, function (err, post) {
+        res.render("post", {
+            title: post.title,
+            content: post.content
+        });
+    });
+
     array.forEach(function (element) {
         if (condi === (_.lowerCase(element.title))) {
             res.render("post.ejs", { title: element.title, content: element.content });
@@ -100,6 +118,17 @@ app.post("/compose", (req, res) => {
     }
     array.push(dataobj);
     res.redirect("/");
+    const post = new Post({
+        title: req.body.postTitle,
+        content: req.body.postBody
+    });
+
+
+    post.save(function (err) {
+        if (!err) {
+            res.redirect("/");
+        }
+    });
 });
 
 app.listen(port, () => {

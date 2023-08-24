@@ -42,6 +42,26 @@ html {
     border-bottom: 3px solid red;
 }
 
+li:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px red;
+    transform: scaleX(0);
+    transition: transform 700ms ease-in-out;
+}
+
+li:hover:after {
+    transform: scaleX(1);
+}
+
+li.fromRight:after {
+    transform-origin: 100% 50%;
+}
+
+li.fromLeft:after {
+    transform-origin: 0% 50%;
+}
+
 .text {
     display: inline-block;
     margin: 25px 200px;
@@ -184,7 +204,7 @@ body {
     text-align: center;
     width: 100%;
     bottom: 0;
-    background-color:lightslategray;
+    background-color: lightslategray;
 }
 
 .footer .h3 {
@@ -192,7 +212,8 @@ body {
 }
 
 .bbody {
-    margin: 0 10rem 0 13rem;
+    position: relative;
+    margin: 10rem 10rem 0 13rem;
     text-align: justify;
     font-size: 22px;
 }
