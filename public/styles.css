@@ -3,10 +3,17 @@
     margin: 0;
 }
 
+html {
+    min-height: 100%;
+    position: relative;
+}
+
 .navbar {
+    position: absolute;
     background-color: #E7F6F2;
+    width: 100%;
+    top: 0;
     color: grey;
-    overflow: auto;
     height: 103px;
     font-family: 'Playfair Display', serif;
 }
@@ -28,6 +35,11 @@
 
 .navbar a {
     text-decoration: none;
+}
+
+.navbar li a:hover {
+    color: #1abc9c !important;
+    border-bottom: 3px solid red;
 }
 
 .text {
@@ -168,7 +180,14 @@ body {
 }
 
 .footer {
+    position: absolute;
     text-align: center;
+    width: 100%;
+    bottom: 0;
+    background-color:lightslategray;
+}
+
+.footer .h3 {
     padding: 20px;
 }
 
@@ -177,6 +196,7 @@ body {
     text-align: justify;
     font-size: 22px;
 }
-.leng{
+
+.leng {
     margin: 5rem 10rem 5rem 30rem;
 }
